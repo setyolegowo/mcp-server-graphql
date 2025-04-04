@@ -1,3 +1,0 @@
-type GraphQLConfig = {
-    url: string;
-}

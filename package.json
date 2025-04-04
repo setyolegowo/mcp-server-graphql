@@ -4,9 +4,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "prepare": "npm run build",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "local-run": "npx ts-node src/index.ts",
+    "inspector-ts": "npx @modelcontextprotocol/inspector npx ts-node src/index.ts",
+    "inspector": "npx @modelcontextprotocol/inspector node dist/index.js",
+    "lint": "eslint . --ext .ts"
   },
   "keywords": [],
   "author": "",
@@ -14,9 +16,15 @@
   "description": "",
   "devDependencies": {
     "@types/node": "^22.14.0",
-    "typescript": "^5.8.2"
+    "@types/yargs": "^17.0.33",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
+    "eslint": "^9.23.0",
+    "typescript": "^5.8.2",
+    "yargs": "^17.7.2"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.8.0"
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "graphql": "^16.10.0"
   }
 }
