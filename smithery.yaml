@@ -12,17 +12,13 @@ startCommand:
         type: string
         default: mcp-server-graphql
         description: Name of the MCP server
-      allowMutations:
-        type: boolean
-        default: false
-        description: Enable mutations in the GraphQL endpoint
       endpoint:
         type: string
         description: GraphQL endpoint URL (must be a valid URL)
       headers:
-        type: object
-        default: {}
-        description: Optional headers to include in GraphQL requests
+        type: string
+        default: "{}"
+        description: Optional headers to include in GraphQL requests in JSON format
   commandFunction:
     # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
     |-
@@ -32,13 +28,9 @@ startCommand:
       env: {
         MCP_SERVER_GRAPHQL_ENDPOINT: config.endpoint,
         MCP_SERVER_GRAPHQL_HEADERS: JSON.stringify(config.headers || {}),
-        MCP_SERVER_GRAPHQL_NAME: config.name,
-        MCP_SERVER_GRAPHQL_ALLOW_MUTATIONS: config.allowMutations.toString()
+        MCP_SERVER_GRAPHQL_NAME: config.name
       }
     })
   exampleConfig:
     name: mcp-server-graphql
-    allowMutations: false
     endpoint: https://example.com/graphql
-    headers:
-      Authorization: Bearer YOUR_TOKEN_HERE
