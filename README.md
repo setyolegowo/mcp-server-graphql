@@ -1,4 +1,5 @@
 # MCP GraphQL
+[![smithery badge](https://smithery.ai/badge/@setyolegowo/mcp-server-graphql)](https://smithery.ai/server/@setyolegowo/mcp-server-graphql)
 
 ## Overview
 This repository contains the GraphQL implementation for the MCP (Mission Control Platform) service.
@@ -13,7 +14,15 @@ A GraphQL API service that provides a flexible and efficient interface for query
 - npm or yarn
 - Access to MCP services
 
-### Installation
+### Installing via Smithery
+
+To install mcp-server-graphql for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@setyolegowo/mcp-server-graphql):
+
+```bash
+npx -y @smithery/cli install @setyolegowo/mcp-server-graphql --client claude
+```
+
+### Manual Installation
 1. Clone the repository
 ```bash
 git clone https://github.com/setyolegowo/mcp-server-graphql.git
